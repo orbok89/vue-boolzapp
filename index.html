@@ -4,25 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
 <body>
-    <div class="container">
+    <div id="root" class="container">
         <div class="riquadro">
             <!-- colonna dei contatti -->
             <div class="colonna-1">
                 <div class="nome-proprietario">
-
+                    <div class="nome-proprietario-container">
+                        <img class="resize-io" src="img/avatar_io.jpg" alt="">
+                        <div class="nome-cognome"> Federico Ferrara</div>
+                    </div>
+                    <div class="icone-c1">
+                        <i class="fas fa-circle-notch"></i>
+                        <i class="fas fa-comment"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
                 </div>
                 <div class="notifiche">
-
+                    <i class="far fa-bell-slash campanella"></i>
+                    <div>
+                        Ricevi notifiche nuovi messaggi <br>
+                        <a href="">Attiva notifiche desktop</a>
+                    </div>
                 </div>
                 <div class="ricerca-contatti">
-
+                    <input  class="ricerca" type="text" placeholder="&#8981; Cerca o inizia una nuova chat" >
                 </div>
                 <div class="contatti">
-
+                    <div v-for="(contatto, index) in contacts" class="flex-contatti" @click="parlaci(index)">
+                        <img :src=" 'img/avatar'+contatto.avatar+'.jpg'" alt="" class="resize-contatti">
+                        <div>{{contatto.name}}</div>
+                    </div>
                 </div>
             </div>
 
@@ -30,7 +46,17 @@
             <!-- colonna dei messaggi -->
             <div class="colonna-2">
                 <div class="contatto-attivo">
-
+                    <div class="nome-proprietario">
+                        <div class="nome-proprietario-container">
+                            <img class="resize-io" :src=" 'img/avatar'+avatar_attivo+'.jpg'" alt="">
+                            <div class="nome-cognome"> {{nome_cognome_attivo}}</div>
+                        </div>
+                        <div class="icone-c1">
+                            <i class="fas fa-circle-notch"></i>
+                            <i class="fas fa-comment"></i>
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
+                    </div>
                 </div>
                 <div class="chat">
 

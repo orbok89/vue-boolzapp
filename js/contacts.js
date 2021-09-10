@@ -1,4 +1,4 @@
-contacts: [
+ contacts: [
     {
         name: 'Michele',
         avatar: '_1',
