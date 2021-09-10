@@ -3,6 +3,7 @@
 var app = new Vue ({
     el:'#root',
     data:{
+        chat_attiva :"",
         nome_cognome_attivo: "",
         avatar_attivo: "",
         contacts: [
@@ -92,7 +93,10 @@ var app = new Vue ({
         parlaci(index){
             this.nome_cognome_attivo =this.contacts[index].name;
             this.avatar_attivo=this.contacts[index].avatar;
-            console.log(this.avatar_attivo);
+            this.chat_attiva = this.contacts[index].messages;
+
+            
+            console.log(this.contacts[index].messages[0].date);
         }
            
        

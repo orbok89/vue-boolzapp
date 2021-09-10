@@ -59,6 +59,10 @@
                     </div>
                 </div>
                 <div class="chat">
+                   <div :class="messaggi.status == 'received' ? 'inviato' : 'ricevuto' " v-for="messaggi in chat_attiva">
+                    {{messaggi.date}}
+                    {{messaggi.message}}
+                   </div>
 
                 </div>
                 <div class="scrivi-messaggio">
