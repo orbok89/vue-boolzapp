@@ -102,7 +102,17 @@ var app = new Vue ({
             console.log(this.contatore);
         },
         invio_messaggio(index) {
-            let now = Date().toLocaleString();
+            var today = new Date();
+
+var date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
+
+var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
+var now = date+' '+time;
+
+
+            
+            
             var newmex={
                 date: now,
                 message: this.nuovo_messaggio,
@@ -116,7 +126,12 @@ var app = new Vue ({
 
         },
         risposta(){
-            now = Date().toLocaleString();
+            var today = new Date();
+            var date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
+
+            var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+            
+            var now = date+' '+time;
             var ok={
                 date: now,
                 message: 'ok',

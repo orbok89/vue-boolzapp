@@ -76,6 +76,8 @@
 .scrivi-messaggio{
     width: 100%;
     height: 50px;
+    display: flex;
+    align-items: center;
      
 
 }
@@ -151,4 +153,10 @@
     position: absolute;
     bottom: 0;
     right: 5px;
+}
+.ricerca1{
+    width: calc(100% - 50px);
+    height: calc(100% - 50px);
+    padding: 10px;
+    margin: 10px;
 }
