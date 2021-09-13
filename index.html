@@ -66,6 +66,7 @@
 
                 </div>
                 <div class="scrivi-messaggio">
+                    <input v-model="nuovo_messaggio" type="text" @keyUp.enter="invio_messaggio()">
 
                 </div>
 
@@ -80,7 +81,7 @@
 
 
 
-
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="js/main.js"></script>
 </body>
