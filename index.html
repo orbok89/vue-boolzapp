@@ -32,12 +32,14 @@
                     </div>
                 </div>
                 <div class="ricerca-contatti">
-                    <input  class="ricerca" type="text" placeholder="&#8981; Cerca o inizia una nuova chat" >
+                    <input  v-model="ricerca_contatto" class="ricerca" type="text" placeholder="&#8981; Cerca o inizia una nuova chat" >
                 </div>
                 <div class="contatti">
                     <div v-for="(contatto, index) in contacts" class="flex-contatti" @click="parlaci(index)">
-                        <img :src=" 'img/avatar'+contatto.avatar+'.jpg'" alt="" class="resize-contatti">
-                        <div>{{contatto.name}}</div>
+                       <div v-if=" filtro( ricerca_contatto, contatto.name)  " class="flex-contatti">
+                            <img :src=" 'img/avatar'+contatto.avatar+'.jpg'" alt="" class="resize-contatti">
+                            <div>{{contatto.name}}</div>
+                       </div>
                     </div>
                 </div>
             </div>
@@ -59,10 +61,16 @@
                     </div>
                 </div>
                 <div class="chat">
-                   <div :class="messaggi.status == 'received' ? 'inviato' : 'ricevuto' " v-for="messaggi in chat_attiva">
-                    {{messaggi.date}}
-                    {{messaggi.message}}
-                   </div>
+
+                    <div  >
+                        <div :class="messaggi.status == 'received' ? 'inviato' : 'ricevuto' " v-for="messaggi in chat_attiva"  >
+                            <div class="prova">
+                                  {{messaggi.message}}
+                                <div class="data-p">{{messaggi.date}}</div>
+                              
+                            </div>
+                           </div>
+                    </div>
 
                 </div>
                 <div class="scrivi-messaggio">

@@ -5,7 +5,7 @@
 }
 
 .container{
-    background-color: wheat;
+     
     width: 100vw;
     height: 100vh;
 }
@@ -13,7 +13,7 @@
 .riquadro{
     width: 70%;
     height: 90%;
-    background-color: violet;
+    
     margin: auto;
     
     
@@ -28,7 +28,7 @@
 .colonna-2{
     width: 70%;
     height: calc(100% - 20px);
-    background-color: teal;
+    
     margin-top: 20px;
     float: left;
 }
@@ -37,7 +37,7 @@
 .nome-proprietario{
     width: 100%;
     height: 50px;
-    background-color: tomato;
+    background-color: #F0F0F0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -45,19 +45,19 @@
 .notifiche{
     width: 100%;
     height: 50px;
-    background-color: yellow;
+    background-color: #9DE1FF;
     display: flex;
     align-items: center;
 }
 .ricerca-contatti{
     width: 100%;
     height: 50px;
-    background-color: royalblue;
+    background-color: #F6F8F9;
 }
 .contatti{
     width: 100%;
-    height: 200px;  /*da togliere*/
-    background-color: hotpink;
+    min-height: 200px;  
+    
 }
 /* fine .colonna-1 */
 
@@ -65,17 +65,18 @@
 .contatto-attivo{
     width: 100%;
     height: 50px;
-    background-color: yellowgreen;
+     
 }
 .chat{
     width: 100%;
     height: calc(100% - 100px);
-    background-color: olive;
+    background-image: url("../img/mine.jpg");
+    padding: 10px;
 }
 .scrivi-messaggio{
     width: 100%;
     height: 50px;
-    background-color: tomato;
+     
 
 }
 /* fine .colonna-2 */
@@ -125,10 +126,29 @@
     display: flex;
     align-items: center;
 }
-.inviato{
-    color: white;
+.inviato > div{
+    
+    background-color: white;
+    
+    
+    
 }
-.ricevuto{
-    background-color: purple;
+.ricevuto > div{
+    
+    background-color: #E1FFC7;
 }
 
+.prova{
+    position: relative;
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid lemonchiffon;
+    width: 30%;
+    border-radius: 15px;
+}
+.data-p{
+    font-size: 10px;
+    position: absolute;
+    bottom: 0;
+    right: 5px;
+}

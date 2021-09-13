@@ -6,6 +6,9 @@ var app = new Vue ({
         chat_attiva :"",
         nome_cognome_attivo: "",
         avatar_attivo: "",
+        nuovo_messaggio:"",
+        contatore:"",
+        ricerca_contatto:"",
         contacts: [
             {
                 name: 'Michele',
@@ -94,9 +97,41 @@ var app = new Vue ({
             this.nome_cognome_attivo =this.contacts[index].name;
             this.avatar_attivo=this.contacts[index].avatar;
             this.chat_attiva = this.contacts[index].messages;
+            this.contatore=index;
 
-            
-            console.log(this.contacts[index].messages[0].date);
+            console.log(this.contatore);
+        },
+        invio_messaggio(index) {
+            let now = Date().toLocaleString();
+            var newmex={
+                date: now,
+                message: this.nuovo_messaggio,
+                status: 'sent'
+
+            }
+            console.log(this.contacts[this.contatore].messages);
+            this.contacts[this.contatore].messages.push(newmex);
+            this.nuovo_messaggio = ""
+            setTimeout( this.risposta, 1000)
+
+        },
+        risposta(){
+            now = Date().toLocaleString();
+            var ok={
+                date: now,
+                message: 'ok',
+                status: 'received'
+
+            }
+            this.contacts[this.contatore].messages.push(ok);
+        },
+        filtro(lettere, contatto){
+            contatto = contatto.toLowerCase();
+            lettere = lettere.toLowerCase();
+          
+            return contatto.includes(lettere)
+
+
         }
            
        
