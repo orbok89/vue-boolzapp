@@ -160,3 +160,29 @@
     padding: 10px;
     margin: 10px;
 }
+.flex-nuvola{
+    display: flex;
+}
+
+.inviato{
+    
+    flex-direction: row-reverse;
+}
+.elimina{
+    display: none;
+    position: absolute;
+    width: 60px;
+    height: 20px;
+    font-size: 15px;
+    background-color: gray;
+    bottom: 15px;
+    right: -15px;
+
+}
+#a{
+    display: inline;
+    background-color: hotpink;
+}
+.c{
+    color: indigo;
+}

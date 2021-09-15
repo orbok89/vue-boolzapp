@@ -9,6 +9,7 @@ var app = new Vue ({
         nuovo_messaggio:"",
         contatore:"",
         ricerca_contatto:"",
+        display_si:"10",
         contacts: [
             {
                 name: 'Michele',
@@ -98,6 +99,7 @@ var app = new Vue ({
             this.avatar_attivo=this.contacts[index].avatar;
             this.chat_attiva = this.contacts[index].messages;
             this.contatore=index;
+            this.display_si= '10';
 
             console.log(this.contatore);
         },
@@ -147,7 +149,18 @@ var now = date+' '+time;
             return contatto.includes(lettere)
 
 
-        }
+        },
+        mostra(i){
+            this.display_si=i,
+            console.log(this.display_si)
+
+            
+           
+        },
+        rimuovi(index){
+            this.chat_attiva.splice(index,1);
+            this.display_si= '10';
+        },
            
        
     }

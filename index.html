@@ -62,16 +62,16 @@
                 </div>
                 <div class="chat">
 
-                    <div  >
-                        <div :class="messaggi.status == 'received' ? 'inviato' : 'ricevuto' " v-for="messaggi in chat_attiva"  >
-                            <div class="prova">
+              
+                        <div :class="messaggi.status == 'received' ? 'inviato' : 'ricevuto' " v-for="(messaggi, index) in chat_attiva" class="flex-nuvola"  >
+                            <div class="prova" @click="mostra(index)" >
                                   {{messaggi.message}}
                                 <div class="data-p">{{messaggi.date}}</div>
-                              
+                              <div class="elimina" :id="(index == display_si) ? 'a' : null " @click="rimuovi(index)"> elimina</div>
                             </div>
-                           </div>
-                    </div>
-
+                            
+                        </div>
+            
                 </div>
                 <div class="scrivi-messaggio">
                     <i class="fas fa-meh"></i>
